@@ -402,11 +402,13 @@ func (r *Reader) StopAt(at time.Time) {
 	close(r.stoppedCh)
 }
 
+const MAX_V_NODES int64 = 32
+
 func (r *Reader) splitStreams(streams []StreamID) [][]StreamID {
 	vnodesIdxToStreams := make(map[int64][]StreamID, 0)
 	for _, stream := range streams {
 		idx := getVnodeIndexForStream(stream)
-		vnodesIdxToStreams[idx] = append(vnodesIdxToStreams[idx], stream)
+		vnodesIdxToStreams[idx%MAX_V_NODES] = append(vnodesIdxToStreams[idx%MAX_V_NODES], stream)
 	}
 
 	groups := make([][]StreamID, 0)
