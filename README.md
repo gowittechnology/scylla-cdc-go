@@ -9,6 +9,6 @@ https://docs.scylladb.com/using-scylla/cdc/
 
 ## Documentation
 
-For an explanation how to use the library, please look at the [godoc documenation](https://godoc.org/github.com/scylladb/scylla-cdc-go).
+For an explanation how to use the library, please look at the [godoc documenation](https://godoc.org/github.com/gowittechnology/scylla-cdc-go).
 
 This repository also includes two [example programs](examples).
